@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Completo | Norte Grande Overland</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">NG<span>Overland</span></a>
+            <nav class="menu">
+                <a href="index.html">Inicio</a>
+                <a href="catalogo.html" class="active">Stock Completo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container section-padding">
+        <div class="section-header">
+            <span class="sub-title">Showroom Virtual</span>
+            <h2 class="section-title">Unidades Seleccionadas</h2>
+        </div>
+
+        <!-- Módulo de Filtros Fijo -->
+        <div class="filter-wrapper">
+            <div class="filter-box">
+                <div class="filter-group">
+                    <label>Marca</label>
+                    <select id="filtro-marca" class="input-field-sm">
+                        <option value="todos">Todas las marcas</option>
+                        <option value="bmw">BMW</option>
+                        <option value="audi">Audi</option>
+                        <option value="mercedes">Mercedes-Benz</option>
+                        <option value="porsche">Porsche</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Tipo de Vehículo</label>
+                    <select id="filtro-categoria" class="input-field-sm">
+                        <option value="todos">Todas las categorías</option>
+                        <option value="sedan">Sedanes</option>
+                        <option value="suv">SUVs Premium</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Precios</label>
+                    <select id="filtro-precio" class="input-field-sm">
+                        <option value="todos">Todos los valores</option>
+                        <option value="bajo">Hasta $60.000.000 ARS</option>
+                        <option value="alto">Más de $60.000.000 ARS</option>
+                    </select>
+                </div>
+                <button id="btn-limpiar" class="btn btn-outline-light" style="padding:0.6rem 1.2rem;">Limpiar</button>
+            </div>
+        </div>
+
+        <div id="sin-resultados" style="display: none; text-align: center; padding: 3rem; color: var(--text-muted);">
+            <h3>⚠️ No se encontraron unidades con esos filtros exactos.</h3>
+        </div>
+
+        <!-- Grilla de Vehículos -->
+        <div class="grid-autos" id="contenedor-stock" style="margin-top: 3rem;">
+            
+            <!-- BMW -->
+            <article class="card-auto" data-marca="bmw" data-categoria="sedan" data-precio="bajo"
+                     data-modelo="Serie 3 330i Sport Line" data-anio="2023" data-precio-full="54.000.000"
+                     data-motor="2.0 TwinPower Turbo 258cv" data-km="14.200 km" data-transmision="Automática 8 Steptronic"
+                     data-foto1="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80"
+                     data-foto2="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80">
+                <div class="tag-status entrega-inmediata">Stock Físico</div>
+                <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" class="auto-img"></div>
+                <div class="card-auto-body">
+                    <span class="categoria">BMW • Sedán</span>
+                    <h3>Serie 3 330i Sport Line</h3>
+                    <div class="precio-auto">$ 54.000.000 <span class="moneda-ref">ARS</span></div>
+                    <p class="descripcion-corta">Año 2023. Motor TwinPower Turbo, instrumental digital Live Cockpit y tapizado premium.</p>
+                    <button class="btn-open-details" onclick="verDetallesAuto(this)">Ficha Completa →</button>
+                </div>
+            </article>
+
+            <!-- Audi -->
+            <article class="card-auto" data-marca="audi" data-categoria="suv" data-precio="alto"
+                     data-modelo="Audi Q5 45 TFSI Quattro" data-anio="2024" data-precio-full="68.500.000"
+                     data-motor="2.0 TFSI Mild-Hybrid 245cv" data-km="0 km (A patentar)" data-transmision="S-tronic 7 marchas"
+                     data-foto1="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=800&q=80"
+                     data-foto2="https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=800&q=80">
+                <div class="tag-status entrega-inmediata" style="background:#3b82f6;">Importado</div>
+                <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=800&q=80" class="auto-img"></div>
+                <div class="card-auto-body">
+                    <span class="categoria">Audi • SUV</span>
+                    <h3>Audi Q5 45 TFSI Quattro</h3>
+                    <div class="precio-auto">$ 68.500.000 <span class="moneda-ref">ARS</span></div>
+                    <p class="descripcion-corta">Año 2024. Tracción integral inteligente, techo solar panorámico y faros Matrix LED.</p>
+                    <button class="btn-open-details" onclick="verDetallesAuto(this)">Ficha Completa →</button>
+                </div>
+            </article>
+
+            <!-- Mercedes -->
+            <article class="card-auto" data-marca="mercedes" data-categoria="sedan" data-precio="alto"
+                     data-modelo="Clase C 300 Avantgarde" data-anio="2024" data-precio-full="62.000.000"
+                     data-motor="2.0 Turbo MHEV 258cv" data-km="4.800 km" data-transmision="Automática 9G-TRONIC"
+                     data-foto1="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=800&q=80"
+                     data-foto2="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80">
+                <div class="tag-status entrega-inmediata">Stock Físico</div>
+                <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=800&q=80" class="auto-img"></div>
+                <div class="card-auto-body">
+                    <span class="categoria">Mercedes-Benz • Sedán</span>
+                    <h3>Clase C 300 Avantgarde</h3>
+                    <div class="precio-auto">$ 62.000.000 <span class="moneda-ref">ARS</span></div>
+                    <p class="descripcion-corta">Año 2024. Sistema infoentretenimiento MBUX, tecnología micro-híbrida y andar ejecutivo.</p>
+                    <button class="btn-open-details" onclick="verDetallesAuto(this)">Ficha Completa →</button>
+                </div>
+            </article>
+
+            <!-- Porsche -->
+            <article class="card-auto" data-marca="porsche" data-categoria="suv" data-precio="alto"
+                     data-modelo="Porsche Macan T 2.0" data-anio="2023" data-precio-full="89.000.000"
+                     data-motor="2.0 Turbo Inline-4 265cv" data-km="8.500 km" data-transmision="Automática PDK 7 velocidades"
+                     data-foto1="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80"
+                     data-foto2="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80">
+                <div class="tag-status entrega-inmediata" style="background:#8b5cf6;">Exclusivo</div>
+                <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" class="auto-img"></div>
+                <div class="card-auto-body">
+                    <span class="categoria">Porsche • SUV</span>
+                    <h3>Porsche Macan T 2.0</h3>
+                    <div class="precio-auto">$ 89.000.000 <span class="moneda-ref">ARS</span></div>
+                    <p class="descripcion-corta">Año 2023. Suspensión adaptativa, llantas de 20 pulgadas y escape deportivo crono.</p>
+                    <button class="btn-open-details" onclick="verDetallesAuto(this)">Ficha Completa →</button>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- VENTANA MODAL FLOTANTE (Detalles dinámicos con galería de fotos) -->
+    <div id="custom-modal" class="modal-overlay">
+        <div class="modal-card">
+            <span class="close-modal-btn" onclick="cerrarFichaModal()">&times;</span>
+            <h2 id="m-titulo" style="font-size:1.8rem; margin-bottom: 1.5rem; font-weight:900;">Modelo</h2>
+            
+            <!-- Mini Galería dentro del modal -->
+            <div class="modal-gallery">
+                <img id="m-img1" src="" alt="Vista Exterior">
+                <img id="m-img2" src="" alt="Vista Detalle / Interior">
+            </div>
+
+            <!-- Ficha técnica estructurada corporativa -->
+            <div class="modal-technical-sheet">
+                <div class="tech-item"><strong>Año fabricación:</strong> <span id="m-anio"></span></div>
+                <div class="tech-item"><strong>Motorización:</strong> <span id="m-motor"></span></div>
+                <div class="tech-item"><strong>Kilometraje actual:</strong> <span id="m-km"></span></div>
+                <div class="tech-item"><strong>Transmisión:</strong> <span id="m-transmision"></span></div>
+                <div class="tech-item" style="border:none; margin-top:1rem; padding-top:1rem; border-top:1px dashed var(--border-color);">
+                    <strong style="color:var(--orange-primary); font-size:1.2rem;">Valor Final:</strong> 
+                    <span id="m-precio" style="font-size:1.3rem; font-weight:900; color:white;"></span> <span style="font-size:0.8rem; color:var(--text-muted);">ARS</span>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" style="width:100%; margin-top:1.5rem; padding:0.8rem;" onclick="alert('Iniciando canal prioritario corporativo para esta unidad...')">Solicitar Cotización Flota / Empresa</button>
+        </div>
+    </div>
+
+    <footer class="footer"><div class="container"><p>&copy; 2026 Norte Grande Overland.</p></div></footer>
+
+    <script src="script-filtros.js"></script>
+</body>
+</html>

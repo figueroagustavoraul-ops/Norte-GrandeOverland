@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Norte Grande Overland</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">NG<span>Overland</span></a>
+            <nav class="menu">
+                <a href="index.html" class="active">Inicio</a>
+                <a href="catalogo.html">Stock Completo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO PRINCIPAL -->
+    <main class="container section-padding" style="text-align: center;">
+        <div class="section-header">
+            <span class="sub-title">División Corporativa & Particular</span>
+            <h1 style="font-size: 3.5rem; font-weight: 900; color: #fff; margin-bottom: 1rem; letter-spacing: -1px;">Norte Grande Overland</h1>
+            <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto 2.5rem auto; font-size: 1.1rem; line-height: 1.6;">
+                Operaciones de alta gama y soluciones de movilidad empresarial. Gestionamos flotas ejecutivas y unidades seleccionadas con la mayor rigurosidad legal y técnica del mercado.
+            </p>
+            <a href="catalogo.html" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1rem; margin-right: 1rem;">Explorar Stock Activo</a>
+            <a href="#corporativo" class="btn btn-outline-light" style="padding: 1rem 2.5rem; font-size: 1rem;">Soluciones Empresas</a>
+        </div>
+    </main>
+
+    <!-- SECCIÓN DE MÉTRICAS -->
+    <section class="container" style="padding-bottom: 4rem;">
+        <div class="grid-metrics">
+            <div class="metric-card">
+                <h3 class="text-metal-gold">+150</h3>
+                <p>Unidades Entregadas</p>
+            </div>
+            <div class="metric-card">
+                <h3 class="text-metal-gold">100%</h3>
+                <p>Peritaje Verificado</p>
+            </div>
+            <div class="metric-card">
+                <h3 class="text-metal-gold">24/7</h3>
+                <p>Soporte Logístico</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CORPORATIVA -->
+    <section id="corporativo" class="container section-padding" style="border-top: 1px solid var(--border-color);">
+        <div class="section-header">
+            <span class="sub-title">B2B // Servicios</span>
+            <h2 class="section-title">Soluciones para Empresas</h2>
+        </div>
+        <div class="grid-autos">
+            <div class="card-auto" style="padding: 2rem;">
+                <h3 class="text-metal-gold" style="margin-bottom: 1rem;">Renovación de Flotas</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">Tomamos lotes de vehículos usados en parte de pago llave por llave para que tu empresa no pierda ni un día de productividad operativa.</p>
+                <span style="font-size: 0.8rem; font-weight: 700; color: #fff;">Soporte Fiscal Incluido</span>
+            </div>
+            <div class="card-auto" style="padding: 2rem;">
+                <h3 class="text-metal-gold" style="margin-bottom: 1rem;">Consignación Premium</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">Ubicamos tu unidad de alta gama en nuestro showroom virtual y físico optimizando el valor de liquidación bajo estrictos contratos de confidencialidad.</p>
+                <span style="font-size: 0.8rem; font-weight: 700; color: #fff;">Liquidación en 48hs</span>
+            </div>
+            <div class="card-auto" style="padding: 2rem;">
+                <h3 class="text-metal-gold" style="margin-bottom: 1rem;">Auditoría Técnica</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">Cada vehículo del catálogo cuenta con un escaneo computarizado completo de motor, transmisión y verificación de historial de siniestros de fábrica.</p>
+                <span style="font-size: 0.8rem; font-weight: 700; color: #fff;">Certificación NG</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- BURBUJA DE ASISTENTE IA -->
+    <div class="ai-bubble-container">
+        <div class="ai-chat-window" id="ai-chat">
+            <div class="ai-chat-header">
+                <div class="ai-status-dot"></div>
+                <span>Overland AI Bot</span>
+            </div>
+            <div class="ai-chat-body">
+                <p class="ai-msg-bot">Hola 👋. Soy el asistente inteligente de NG Overland. ¿Buscás una cotización corporativa o asesoramiento sobre alguna unidad de alta gama?</p>
+            </div>
+            <div class="ai-chat-footer">
+                <input type="text" placeholder="Escribí tu consulta..." id="ai-input">
+                <button onclick="enviarMensajeIA()">➔</button>
+            </div>
+        </div>
+        <button class="ai-bubble-trigger" onclick="toggleAIChat()">
+            <span class="ai-icon">✨</span>
+            <span class="ai-badge">IA</span>
+        </button>
+    </div>
+
+    <footer class="footer"><div class="container"><p>&copy; 2026 Norte Grande Overland.</p></div></footer>
+
+    <script src="script-filtros.js"></script>
+</body>
+</html>
